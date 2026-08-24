@@ -23,8 +23,7 @@ const CATEGORY_ORDER = [
   'Cakes',
   'Birthday Cakes',
   'Biscuits',
-  'Snacks',
-  'Drinks'
+  'Snacks'
 ];
 
 const CATEGORY_EMOJIS = {
@@ -35,7 +34,6 @@ const CATEGORY_EMOJIS = {
   'Birthday Cakes': '🎂',
   'Biscuits': '🍪',
   'Snacks': '🥨',
-  'Drinks': '🥤',
   'Specials': '⭐'
 };
 
@@ -148,7 +146,7 @@ export default function Home() {
     return myList.reduce((sum, entry) => sum + entry.quantity, 0);
   }, [myList]);
 
-  // Filter items based on search query, category, and veg filter
+  // Filter items based on search query and veg filter
   const filteredItems = useMemo(() => {
     return menuData.filter((item) => {
       // 1. Veg filter
@@ -163,14 +161,9 @@ export default function Home() {
         return matchName || matchDesc || matchCategory;
       }
 
-      // 3. Category tab filter
-      if (selectedCategory !== 'All') {
-        return item.category === selectedCategory;
-      }
-
       return true;
     });
-  }, [searchQuery, selectedCategory, vegOnly]);
+  }, [searchQuery, vegOnly]);
 
   // Extract specials items
   const specialsItems = useMemo(() => {
@@ -188,6 +181,49 @@ export default function Home() {
     });
     return groups;
   }, [filteredItems]);
+
+  // Scroll spy to update active category tab as user scrolls through menu
+  useEffect(() => {
+    if (searchQuery) return;
+
+    let isScheduled = false;
+    const handleScrollSpy = () => {
+      if (isScheduled) return;
+      isScheduled = true;
+
+      requestAnimationFrame(() => {
+        isScheduled = false;
+        const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 68;
+        const targetPoint = navHeight + 120; // Activation line near category bar
+
+        const sectionMap = [
+          { id: 'section-specials', category: 'Specials' },
+          ...CATEGORY_ORDER.map((cat) => ({
+            id: `section-${cat.replace(/\s+/g, '-').toLowerCase()}`,
+            category: cat
+          })),
+          { id: 'section-gallery', category: 'Gallery' }
+        ];
+
+        let currentActive = 'All';
+        for (const item of sectionMap) {
+          const el = document.getElementById(item.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= targetPoint && rect.bottom > targetPoint) {
+              currentActive = item.category;
+              break;
+            }
+          }
+        }
+
+        setSelectedCategory((prev) => (prev !== currentActive ? currentActive : prev));
+      });
+    };
+
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, [searchQuery]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -244,7 +280,7 @@ export default function Home() {
         </div>
 
         {/* 1. Specials Highlights Section */}
-        {(!searchQuery && (selectedCategory === 'All' || selectedCategory === 'Specials')) && (
+        {!searchQuery && (
           <SpecialsSection
             items={specialsItems}
             myListMap={myListMap}
@@ -304,34 +340,14 @@ export default function Home() {
                 </div>
               )}
             </div>
-          ) : selectedCategory === 'Specials' ? (
-            /* Specials Only view when Specials tab is picked */
-            <div className="space-y-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {filteredItems.map((item, idx) => (
-                  <MenuCard
-                    key={item.id}
-                    item={item}
-                    index={idx}
-                    quantity={myListMap[item.id] || 0}
-                    onUpdateQuantity={handleUpdateQuantity}
-                    onItemClick={(item) => setSelectedItem(item)}
-                  />
-                ))}
-              </div>
-            </div>
           ) : (
             /* Standard Categorized Group Sections */
             Object.entries(groupedCategories).map(([category, items]) => {
-              if (selectedCategory !== 'All' && selectedCategory !== category) {
-                return null;
-              }
-
               return (
                 <section
                   key={category}
                   id={`section-${category.replace(/\s+/g, '-').toLowerCase()}`}
-                  className="space-y-3 scroll-mt-32"
+                  className="space-y-3 scroll-mt-36"
                 >
                   {/* Category Section Header */}
                   <div className="flex items-center justify-between border-b border-bakery-secondary/25 pb-2">
@@ -366,7 +382,7 @@ export default function Home() {
         </div>
 
         {/* Custom Birthday Cake Gallery Section */}
-        {(!searchQuery && (selectedCategory === 'All' || selectedCategory === 'Gallery')) && (
+        {!searchQuery && (
           <GallerySection />
         )}
       </main>

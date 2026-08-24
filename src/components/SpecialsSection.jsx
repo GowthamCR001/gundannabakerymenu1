@@ -6,7 +6,7 @@ export default function SpecialsSection({ items, onItemClick, myListMap = {}, on
   if (!items || items.length === 0) return null;
 
   return (
-    <section id="section-specials" className="py-6 px-4 max-w-4xl mx-auto">
+    <section id="section-specials" className="py-6 px-4 max-w-4xl mx-auto scroll-mt-36">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-4">
         <div>

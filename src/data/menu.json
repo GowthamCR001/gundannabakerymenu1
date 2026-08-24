@@ -16,7 +16,7 @@
     "id": 102,
     "category": "Specials",
     "name": "Pistha Kunafa (ಪಿಸ್ತಾ ಕುನಾಫಾ)",
-    "price": 120,
+    "price": 100,
     "rating": 4.95,
     "isVeg": true,
     "popular": true,
@@ -28,14 +28,14 @@
   {
     "id": 103,
     "category": "Specials",
-    "name": "Honey Cake (ಹನಿ ಕೇಕ್)",
-    "price": 45,
+    "name": "Special Honey Cake (ಸ್ಪೆಷಲ್ ಹನಿ ಕೇಕ್)",
+    "price": 20,
     "rating": 4.8,
     "isVeg": true,
     "popular": true,
     "badge": "⭐ Heritage Item",
     "availability": true,
-    "image": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format&fit=crop&q=80",
+    "image": "Special Honey Cake.png",
     "description": "Classic moist sponge cake soaked in pure floral honey syrup topped with sweet raspberry jam glaze and shredded coconut."
   },
   {
@@ -55,7 +55,7 @@
     "id": 105,
     "category": "Specials",
     "name": "Veg Puff (ವೆಜ್ ಪಫ್)",
-    "price": 30,
+    "price": 20,
     "rating": 4.85,
     "isVeg": true,
     "popular": true,
@@ -91,55 +91,6 @@
     "description": "Rich creamy cheesecake topped with caramelized Lotus Biscoff cookie spread and crushed cookies."
   },
   {
-    "id": 201,
-    "category": "Bread",
-    "name": "Milk Bread (ಮಿಲ್ಕ್ ಬ್ರೆಡ್)",
-    "price": 40,
-    "rating": 4.7,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80",
-    "description": "Ultra soft sliced loaf prepared with fresh dairy milk and fine wheat flour. Baked fresh twice daily."
-  },
-  {
-    "id": 202,
-    "category": "Bread",
-    "name": "Brown Bread (ಬ್ರೌನ್ ಬ್ರೆಡ್)",
-    "price": 45,
-    "rating": 4.6,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&auto=format&fit=crop&q=80",
-    "description": "Healthy high-fiber whole wheat brown loaf sliced and wrapped fresh for daily breakfast."
-  },
-  {
-    "id": 203,
-    "category": "Bread",
-    "name": "Sandwich Bread (ಸ್ಯಾಂಡ್‌ವಿಚ್ ಬ್ರೆಡ್)",
-    "price": 50,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&auto=format&fit=crop&q=80",
-    "description": "Extra large jumbo bread slices designed perfectly for vegetable and cheese grilled sandwiches."
-  },
-  {
-    "id": 204,
-    "category": "Bread",
-    "name": "Garlic Bread Loaf (ಗಾರ್ಲಿಕ್ ಬ್ರೆಡ್)",
-    "price": 60,
-    "rating": 4.75,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Aromatic",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=600&auto=format&fit=crop&q=80",
-    "description": "Freshly toasted baguette infused with roasted garlic, parsley, and golden butter spread."
-  },
-  {
     "id": 205,
     "category": "Bread",
     "name": "Normal Bread (ಸಾಮಾನ್ಯ ಬ್ರೆಡ್)",
@@ -165,18 +116,6 @@
     "description": "Nutritious whole wheat sliced bread packed with natural grain flavor."
   },
   {
-    "id": 207,
-    "category": "Bread",
-    "name": "Salt Bread (ಸಾಲ್ಟ್ ಬ್ರೆಡ್)",
-    "price": 30,
-    "rating": 4.6,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&auto=format&fit=crop&q=80",
-    "description": "Savory bakery sliced bread loaf crafted with light sea salt seasoning."
-  },
-  {
     "id": 208,
     "category": "Bread",
     "name": "Bread Toast (ಬ್ರೆಡ್ ಟೋಸ್ಟ್)",
@@ -192,7 +131,7 @@
     "id": 301,
     "category": "Buns",
     "name": "Cream Bun (ಕ್ರೀಮ್ ಬನ್)",
-    "price": 25,
+    "price": 30,
     "rating": 4.8,
     "isVeg": true,
     "popular": true,
@@ -204,33 +143,20 @@
   {
     "id": 302,
     "category": "Buns",
-    "name": "Jam Bun (ಜಾಮ್ ಬನ್)",
-    "price": 25,
+    "name": "Blueberry Cream Bun (ಬ್ಲೂಬೆರ್ರಿ ಕ್ರೀಮ್ ಬನ್)",
+    "price": 30,
     "rating": 4.7,
     "isVeg": true,
     "popular": false,
     "availability": true,
-    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&auto=format&fit=crop&q=80",
-    "description": "Soft baked dough filled with rich mixed fruit strawberry-apple jam."
-  },
-  {
-    "id": 303,
-    "category": "Buns",
-    "name": "Sweet Bun (Dilkush) (ದಿಲ್‌ಖುಷ್ ಬನ್)",
-    "price": 35,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Classic",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80",
-    "description": "Round traditional sweet bun packed with sweet shredded coconut, candied fruits, and raisins."
+    "image": "Jam Bun.png",
+    "description": "Soft baked bun generously stuffed with delicious blueberry cream filling."
   },
   {
     "id": 304,
     "category": "Buns",
     "name": "Khara Bun (Masala) (ಖಾರಾ ಬನ್)",
-    "price": 30,
+    "price": 20,
     "rating": 4.9,
     "isVeg": true,
     "popular": true,
@@ -291,18 +217,6 @@
     "description": "Freshly baked bun generously stuffed with garlic butter spread and melted cheese."
   },
   {
-    "id": 309,
-    "category": "Buns",
-    "name": "Masala Bun (ಮಸಾಲ ಬನ್)",
-    "price": 20,
-    "rating": 4.7,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=80",
-    "description": "Savory baked bun seasoned with Indian spices, onions, and curry leaves."
-  },
-  {
     "id": 310,
     "category": "Buns",
     "name": "Alu Bun (ಆಲೂ ಬನ್)",
@@ -344,7 +258,7 @@
     "id": 401,
     "category": "Puffs",
     "name": "Veg Puff (ವೆಜ್ ಪಫ್)",
-    "price": 30,
+    "price": 20,
     "rating": 4.85,
     "isVeg": true,
     "popular": true,
@@ -356,7 +270,7 @@
     "id": 402,
     "category": "Puffs",
     "name": "Egg Puff (ಎಗ್ ಪಫ್)",
-    "price": 35,
+    "price": 20,
     "rating": 4.9,
     "isVeg": false,
     "popular": true,
@@ -378,22 +292,10 @@
     "description": "Layered butter pastry crust filled with spicy cottage cheese cubes, capsicum, and tikka spices."
   },
   {
-    "id": 404,
-    "category": "Puffs",
-    "name": "Mushroom Puff (ಮಶ್ರೂಮ್ ಪಫ್)",
-    "price": 45,
-    "rating": 4.75,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?w=600&auto=format&fit=crop&q=80",
-    "description": "Savoury puff loaded with button mushrooms sautéed in garlic pepper & herbs."
-  },
-  {
     "id": 405,
     "category": "Puffs",
     "name": "Veg Burger (ವೆಜ್ ಬರ್ಗರ್)",
-    "price": 40,
+    "price": 30,
     "rating": 4.8,
     "isVeg": true,
     "popular": true,
@@ -431,50 +333,13 @@
     "id": 501,
     "category": "Cakes",
     "name": "Honey Cake (ಹನಿ ಕೇಕ್)",
-    "price": 45,
+    "price": 20,
     "rating": 4.8,
     "isVeg": true,
     "popular": true,
     "availability": true,
     "image": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format&fit=crop&q=80",
     "description": "Sponge slice soaked in sweet honey syrup topped with fruit jam and coconut flakes."
-  },
-  {
-    "id": 502,
-    "category": "Cakes",
-    "name": "Plain Tea Cake (ಪ್ಲೇನ್ ಟೀ ಕೇಕ್)",
-    "price": 35,
-    "rating": 4.7,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=600&auto=format&fit=crop&q=80",
-    "description": "Traditional vanilla butter slice cake ideal for dipping into hot evening tea."
-  },
-  {
-    "id": 503,
-    "category": "Cakes",
-    "name": "Plum Fruit Cake (ಪ್ಲಮ್ ಫ್ರೂಟ್ ಕೇಕ್)",
-    "price": 60,
-    "rating": 4.9,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Rich Recipe",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80",
-    "description": "Rich dark cake slice loaded with rum-soaked dried plums, candied peel, cashew, and cinnamon spice."
-  },
-  {
-    "id": 504,
-    "category": "Cakes",
-    "name": "Chocolate Pastry (ಚಾಕೊಲೇಟ್ ಪೇಸ್ಟ್ರಿ)",
-    "price": 55,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&auto=format&fit=crop&q=80",
-    "description": "Moist chocolate sponge layer cake frosted with chocolate ganache and chocolate curls."
   },
   {
     "id": 505,
@@ -574,7 +439,7 @@
     "popular": true,
     "badge": "Chef Special",
     "availability": true,
-    "image": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?w=600&auto=format&fit=crop&q=80",
+    "image": "Pistha Kunafa.png",
     "description": "Middle Eastern style kunafa pastry slice layered with cream cheese and pistachio syrup."
   },
   {
@@ -753,19 +618,6 @@
     "description": "Freshly baked classic butter vanilla tea cake bar."
   },
   {
-    "id": 527,
-    "category": "Cakes",
-    "name": "Plum Cake (ಪ್ಲಮ್ ಕೇಕ್)",
-    "price": 100,
-    "rating": 4.9,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Festive Special",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80",
-    "description": "Rich dark traditional plum cake with soaked fruits and spices."
-  },
-  {
     "id": 528,
     "category": "Cakes",
     "name": "Fruit Cake (ಫ್ರೂಟ್ ಕೇಕ್)",
@@ -794,7 +646,7 @@
     "id": 601,
     "category": "Birthday Cakes",
     "name": "Black Forest Cake (ಬ್ಲ್ಯಾಕ್ ಫಾರೆಸ್ಟ್ ಕೇಕ್)",
-    "price": 450,
+    "price": 500,
     "rating": 4.95,
     "isVeg": true,
     "popular": true,
@@ -807,7 +659,7 @@
     "id": 602,
     "category": "Birthday Cakes",
     "name": "Chocolate Truffle (ಚಾಕೊಲೇಟ್ ಟ್ರಫಲ್)",
-    "price": 550,
+    "price": 600,
     "rating": 4.9,
     "isVeg": true,
     "popular": true,
@@ -820,7 +672,7 @@
     "id": 603,
     "category": "Birthday Cakes",
     "name": "Butterscotch Cake (ಬಟರ್‌ಸ್ಕಾಚ್ ಕೇಕ್)",
-    "price": 480,
+    "price": 400,
     "rating": 4.8,
     "isVeg": true,
     "popular": false,
@@ -832,7 +684,7 @@
     "id": 604,
     "category": "Birthday Cakes",
     "name": "Red Velvet Cake (ರೆಡ್ ವೆಲ್ವೆಟ್ ಕೇಕ್)",
-    "price": 600,
+    "price": 650,
     "rating": 4.95,
     "isVeg": true,
     "popular": true,
@@ -840,19 +692,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&auto=format&fit=crop&q=80",
     "description": "1 Kg luxurious crimson red cocoa sponge layered with smooth cream cheese frosting."
-  },
-  {
-    "id": 701,
-    "category": "Biscuits",
-    "name": "Butter Cookies (250g) (ಬಟರ್ ಬಿಸ್ಕತ್ತು)",
-    "price": 100,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Melt in Mouth",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
-    "description": "Handcrafted pure butter biscuits baked until crisp and crumbly. Perfect tea time pairing."
   },
   {
     "id": 702,
@@ -877,32 +716,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
     "description": "Rich golden cookies studded with roasted crunchy cashew nut pieces."
-  },
-  {
-    "id": 704,
-    "category": "Biscuits",
-    "name": "Osmania Biscuits (250g) (ಉಸ್ಮಾನಿಯಾ ಬಿಸ್ಕತ್ತು)",
-    "price": 95,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Irani Special",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&fit=crop&q=80",
-    "description": "Authentic sweet & salty Irani style chai biscuits crafted with cardamoms and ghee."
-  },
-  {
-    "id": 705,
-    "category": "Biscuits",
-    "name": "Jam Badam Cookies (ಜಾಮ್ ಬಾದಾಮ್ ಬಿಸ್ಕತ್ತು)",
-    "price": 100,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Bestseller",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
-    "description": "Crisp almond cookies topped with a dollop of sweet fruit jam."
   },
   {
     "id": 706,
@@ -990,19 +803,6 @@
     "description": "Perfect balance of sweet & salty crunch in every bite."
   },
   {
-    "id": 713,
-    "category": "Biscuits",
-    "name": "Masala Biscuit (ಮಸಾಲ ಬಿಸ್ಕತ್ತು)",
-    "price": 100,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Spicy Bite",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&fit=crop&q=80",
-    "description": "Savory biscuits spiced with black pepper, cumin, and curry leaves."
-  },
-  {
     "id": 714,
     "category": "Biscuits",
     "name": "Choco Nuts Biscuit (ಚೊಕೊ ನಟ್ಸ್ ಬಿಸ್ಕತ್ತು)",
@@ -1077,18 +877,6 @@
     "description": "Melt-in-mouth traditional gram flour nankhatai cookies baked in pure ghee."
   },
   {
-    "id": 720,
-    "category": "Biscuits",
-    "name": "Pista Biscuit (ಪಿಸ್ತಾ ಬಿಸ್ಕತ್ತು)",
-    "price": 120,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
-    "description": "Aromatic butter cookies enriched with real roasted pistachios."
-  },
-  {
     "id": 721,
     "category": "Biscuits",
     "name": "Chocolate Cashew Biscuit (ಚಾಕೊಲೇಟ್ ಗೋಡಂಬಿ ಬಿಸ್ಕತ್ತು)",
@@ -1100,18 +888,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
     "description": "Dark cocoa biscuits studded with whole cashew nut pieces."
-  },
-  {
-    "id": 722,
-    "category": "Biscuits",
-    "name": "Cashew Biscuit (ಗೋಡಂಬಿ ಬಿಸ್ಕತ್ತು)",
-    "price": 120,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&auto=format&fit=crop&q=80",
-    "description": "Golden butter cookies topped with whole roasted cashews."
   },
   {
     "id": 723,
@@ -1126,18 +902,6 @@
     "description": "Crispy baked milk rusks, ideal for daily tea time."
   },
   {
-    "id": 724,
-    "category": "Biscuits",
-    "name": "Garlic Rusk (ಗಾರ್ಲಿಕ್ ರಸ್ಕ್)",
-    "price": 100,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&fit=crop&q=80",
-    "description": "Savory crispy rusks infused with roasted garlic butter."
-  },
-  {
     "id": 725,
     "category": "Biscuits",
     "name": "Om Biscuits (Ajwain) (ಓಂ ಕಾಳು ಬಿಸ್ಕತ್ತು)",
@@ -1149,43 +913,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&fit=crop&q=80",
     "description": "Savory tea time biscuits flavored with digestive ajwain (carom seeds)."
-  },
-  {
-    "id": 801,
-    "category": "Snacks",
-    "name": "Special Nipattu (200g) (ಸ್ಪೆಷಲ್ ನಿಪ್ಪಟ್ಟು)",
-    "price": 60,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Crispy Favorite",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
-    "description": "Traditional South-Indian crunchy fried rice cracker spiced with peanuts, sesame seeds, and red chilli powder."
-  },
-  {
-    "id": 802,
-    "category": "Snacks",
-    "name": "Butter Kodubale (200g) (ಬೆಣ್ಣೆ ಕೋಡುಬಳೆ)",
-    "price": 65,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": true,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
-    "description": "Ring-shaped deep fried savory snack prepared with rice flour, roasted coconut, and fresh butter."
-  },
-  {
-    "id": 803,
-    "category": "Snacks",
-    "name": "Special Mixture (200g) (ಸ್ಪೆಷಲ್ ಮಿಕ್ಸ್‌ಚರ್)",
-    "price": 55,
-    "rating": 4.75,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=600&auto=format&fit=crop&q=80",
-    "description": "Spicy fried sev mix combined with fried peanuts, curry leaves, boondi, and fried cashews."
   },
   {
     "id": 804,
@@ -1236,19 +963,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&auto=format&fit=crop&q=80",
     "description": "Thin crispy bakery potato chips tossed with salt."
-  },
-  {
-    "id": 808,
-    "category": "Snacks",
-    "name": "Spicy Chilli Potato Chips (ಖಾರ ಆಲೂ ಚಿಪ್ಸ್)",
-    "price": 80,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Hot & Spicy",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&auto=format&fit=crop&q=80",
-    "description": "Crispy potato wafers coated in hot chilli masala seasoning."
   },
   {
     "id": 809,
@@ -1351,56 +1065,6 @@
     "description": "Melt-in-mouth savory butter murukku sticks made with pure fresh butter."
   },
   {
-    "id": 901,
-    "category": "Drinks",
-    "name": "Fresh Sweet Lassi (ಫ್ರೆಶ್ ಸ್ವೀಟ್ ಲಸ್ಸಿ)",
-    "price": 40,
-    "rating": 4.85,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Refreshing",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&auto=format&fit=crop&q=80",
-    "description": "Chilled thick churned curd sweet lassi topped with fresh malai cream and cardamom."
-  },
-  {
-    "id": 902,
-    "category": "Drinks",
-    "name": "Spiced Masala Buttermilk (ಮಸಾಲ ಮಜ್ಜಿಗೆ)",
-    "price": 25,
-    "rating": 4.8,
-    "isVeg": true,
-    "popular": true,
-    "badge": "Cooling",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600&auto=format&fit=crop&q=80",
-    "description": "Traditional digestive curd drink blended with crushed ginger, green chillies, curry leaves, and coriander."
-  },
-  {
-    "id": 903,
-    "category": "Drinks",
-    "name": "Cold Mineral Water (1L) (ಕೋಲ್ಡ್ ಮಿನರಲ್ ವಾಟರ್)",
-    "price": 20,
-    "rating": 4.5,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=600&auto=format&fit=crop&q=80",
-    "description": "Chilled packaged drinking water bottle."
-  },
-  {
-    "id": 904,
-    "category": "Drinks",
-    "name": "Soft Drink Can (330ml) (ಸಾಫ್ಟ್ ಡ್ರಿಂಕ್ ಕ್ಯಾನ್)",
-    "price": 40,
-    "rating": 4.6,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&auto=format&fit=crop&q=80",
-    "description": "Choice of carbonated beverage (Cola, Orange, Lemon Lime) served chilled."
-  },
-  {
     "id": 313,
     "category": "Buns",
     "name": "Dry Fruits Dilpasand (ಡ್ರೈ ಫ್ರೂಟ್ಸ್ ದಿಲ್‌ಪಸಂದ್)",
@@ -1454,7 +1118,7 @@
     "id": 531,
     "category": "Cakes",
     "name": "Choco Roll Cake (ಚೊಕೊ ರೋಲ್ ಕೇಕ್)",
-    "price": 45,
+    "price": 20,
     "rating": 4.8,
     "isVeg": true,
     "popular": false,
@@ -1466,7 +1130,7 @@
     "id": 532,
     "category": "Cakes",
     "name": "Chocolate Cake (ಚಾಕೊಲೇಟ್ ಕೇಕ್)",
-    "price": 50,
+    "price": 20,
     "rating": 4.85,
     "isVeg": true,
     "popular": true,
@@ -1478,7 +1142,7 @@
     "id": 533,
     "category": "Cakes",
     "name": "Chocolate Jam Roll (ಚಾಕೊಲೇಟ್ ಜಾಮ್ ರೋಲ್)",
-    "price": 40,
+    "price": 20,
     "rating": 4.75,
     "isVeg": true,
     "popular": false,
@@ -1487,22 +1151,10 @@
     "description": "Delightful chocolate roll filled with sweet fruity jam."
   },
   {
-    "id": 534,
-    "category": "Cakes",
-    "name": "Cup Cake (ಕಪ್ ಕೇಕ್)",
-    "price": 25,
-    "rating": 4.7,
-    "isVeg": true,
-    "popular": false,
-    "availability": true,
-    "image": "Cup Cake.png",
-    "description": "Classic soft fluffy cupcake with sweet frosting."
-  },
-  {
     "id": 535,
     "category": "Cakes",
     "name": "Jam Roll (ಜಾಮ್ ರೋಲ್)",
-    "price": 35,
+    "price": 20,
     "rating": 4.7,
     "isVeg": true,
     "popular": false,
@@ -1514,7 +1166,7 @@
     "id": 536,
     "category": "Cakes",
     "name": "Vanilla Roll Cake (ವೆನಿಲಾ ರೋಲ್ ಕೇಕ್)",
-    "price": 40,
+    "price": 20,
     "rating": 4.75,
     "isVeg": true,
     "popular": false,

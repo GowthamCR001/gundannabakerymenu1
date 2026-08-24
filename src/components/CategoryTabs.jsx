@@ -11,8 +11,7 @@ const CATEGORIES = [
   { id: 'Cakes', label: 'Cakes', icon: '🍰' },
   { id: 'Birthday Cakes', label: 'Birthday Cakes', icon: '🎂' },
   { id: 'Biscuits', label: 'Biscuits', icon: '🍪' },
-  { id: 'Snacks', label: 'Snacks', icon: '🥨' },
-  { id: 'Drinks', label: 'Drinks', icon: '🥤' }
+  { id: 'Snacks', label: 'Snacks', icon: '🥨' }
 ];
 
 export default function CategoryTabs({ selectedCategory, setSelectedCategory, activeSection }) {
@@ -29,20 +28,35 @@ export default function CategoryTabs({ selectedCategory, setSelectedCategory, ac
 
   const handleSelectCategory = (catId) => {
     setSelectedCategory(catId);
-    if (catId === 'All') {
-      window.scrollTo({ top: 320, behavior: 'smooth' });
-    } else {
-      const el = document.getElementById(`section-${catId.replace(/\s+/g, '-').toLowerCase()}`);
-      if (el) {
-        const yOffset = -120; // Offset for sticky navbar & category tabs
-        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+
+    requestAnimationFrame(() => {
+      let targetId = '';
+      if (catId === 'All' || catId === 'Specials') {
+        targetId = 'section-specials';
+      } else if (catId === 'Gallery') {
+        targetId = 'section-gallery';
+      } else {
+        targetId = `section-${catId.replace(/\s+/g, '-').toLowerCase()}`;
       }
-    }
+
+      const el = document.getElementById(targetId);
+      if (el) {
+        const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 68;
+        const catTabsHeight = 52;
+        const yOffset = -(navHeight + catTabsHeight + 12);
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      } else if (catId === 'All') {
+        window.scrollTo({ top: 320, behavior: 'smooth' });
+      }
+    });
   };
 
   return (
-    <nav className="sticky top-[60px] z-30 bg-bakery-bg/95 backdrop-blur-md py-2.5 border-y border-bakery-secondary/20 shadow-sm">
+    <nav
+      style={{ top: 'var(--navbar-height, 68px)' }}
+      className="sticky z-30 bg-bakery-bg/95 backdrop-blur-md py-2.5 border-y border-bakery-secondary/20 shadow-sm transition-[top] duration-300"
+    >
       <div className="max-w-4xl mx-auto px-4 flex items-center justify-between gap-2">
         {/* Section Label */}
         <div className="hidden md:flex items-center gap-1.5 text-xs font-bold text-bakery-primary uppercase tracking-wider shrink-0">

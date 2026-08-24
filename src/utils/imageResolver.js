@@ -46,10 +46,17 @@ export function getItemImage(item) {
       return imageMap.get(nameKey);
     }
 
-    // 3. Partial / substring match
+    // 3. Partial / substring & token match
     for (const [key, url] of imageMap.entries()) {
-      if (key && nameKey && (key === nameKey || key.includes(nameKey) || nameKey.includes(key))) {
-        return url;
+      if (key && nameKey) {
+        if (key === nameKey || key.includes(nameKey) || nameKey.includes(key)) {
+          return url;
+        }
+        // Token match for multi-word items (e.g. 'kunafa' in 'kunafacake' matching 'pisthakunafa')
+        const tokens = nameKey.match(/[a-z]{5,}/g) || [];
+        if (tokens.some(t => key.includes(t))) {
+          return url;
+        }
       }
     }
   }

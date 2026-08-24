@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Instagram, ShoppingBag, Camera } from 'lucide-react';
 import bakeryInfo from '../data/bakeryInfo.json';
 
 export default function Navbar({ onOpenQr, listCount = 0, onOpenList }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +18,37 @@ export default function Navbar({ onOpenQr, listCount = 0, onOpenList }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Dynamically calculate header height and update --navbar-height CSS variable
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        const height = headerRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+      }
+    };
+
+    updateHeaderHeight();
+
+    let resizeObserver;
+    if (headerRef.current && window.ResizeObserver) {
+      resizeObserver = new ResizeObserver(updateHeaderHeight);
+      resizeObserver.observe(headerRef.current);
+    }
+
+    window.addEventListener('resize', updateHeaderHeight);
+    return () => {
+      if (resizeObserver) resizeObserver.disconnect();
+      window.removeEventListener('resize', updateHeaderHeight);
+    };
+  }, [isScrolled]);
+
   return (
-    <header className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'glass-nav shadow-md py-2.5' : 'bg-bakery-bg py-3 border-b border-bakery-secondary/20'}`}>
+    <header
+      ref={headerRef}
+      className={`sticky top-0 z-40 transition-all duration-300 ${
+        isScrolled ? 'glass-nav shadow-md py-2.5' : 'bg-bakery-bg py-3 border-b border-bakery-secondary/20'
+      }`}
+    >
       <div className="max-w-4xl mx-auto px-4 flex items-center justify-between gap-3">
         {/* Left: Bakery Brand */}
         <div className="flex items-center gap-2.5">
@@ -60,7 +90,8 @@ export default function Navbar({ onOpenQr, listCount = 0, onOpenList }) {
             onClick={() => {
               const el = document.getElementById('section-gallery');
               if (el) {
-                const yOffset = -120;
+                const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 68;
+                const yOffset = -(navHeight + 50);
                 const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
               }

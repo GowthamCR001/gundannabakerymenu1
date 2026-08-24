@@ -29,7 +29,7 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="section-gallery" className="py-8 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/20 border-t border-amber-200/50">
+    <section id="section-gallery" className="py-8 bg-gradient-to-b from-amber-50/40 via-white to-amber-50/20 border-t border-amber-200/50 scroll-mt-36">
       <div className="max-w-4xl mx-auto px-4 space-y-6">
         
         {/* Section Title & Header */}
