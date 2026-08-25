@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Star, Sparkles, X, Flame, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { Search, Star, Sparkles, X, Flame, ShieldCheck, ShoppingBag, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import bakeryInfo from '../data/bakeryInfo.json';
 
@@ -97,13 +97,13 @@ export default function Hero({ searchQuery, setSearchQuery, selectedCategory, se
         )}
       </motion.div>
 
-      {/* Offer Banner Card (Inspired by Attached Reference Image) */}
+      {/* Storefront Banner Card */}
       {!searchQuery && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-bakery-price via-orange-500 to-amber-600 text-white p-4 sm:p-5 shadow-lg border border-orange-400/30"
+          className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-bakery-price via-amber-600 to-amber-700 text-white p-4 sm:p-5 shadow-lg border border-amber-400/30"
         >
           {/* Subtle Background Pattern */}
           <div className="absolute right-0 bottom-0 top-0 w-1/2 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -116,26 +116,29 @@ export default function Hero({ searchQuery, setSearchQuery, selectedCategory, se
               <h3 className="text-lg sm:text-xl font-bold font-heading leading-tight">
                 {bakeryInfo.offers[0].title}
               </h3>
-              <p className="text-xl sm:text-2xl font-extrabold text-amber-100 font-heading">
-                {bakeryInfo.offers[0].discount}
+              <p className="text-sm font-bold text-amber-200 font-sans">
+                (ಗುಂಡಣ್ಣ ಬೇಕರಿ — ಹಾಸನ)
               </p>
-              <p className="text-xs text-white/90 line-clamp-1">
+              <p className="text-xs text-white/90 leading-relaxed line-clamp-2">
                 {bakeryInfo.offers[0].description}
               </p>
-              <button
-                onClick={() => setSelectedCategory('Birthday Cakes')}
-                className="mt-2 inline-flex items-center gap-1 bg-white text-bakery-price font-bold text-xs px-3.5 py-1.5 rounded-full shadow hover:bg-amber-50 active:scale-95 transition-all"
+              <a
+                href={bakeryInfo.locationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1.5 bg-white text-amber-900 font-bold text-xs px-3.5 py-1.5 rounded-full shadow hover:bg-amber-50 active:scale-95 transition-all"
               >
-                {bakeryInfo.offers[0].action} &rarr;
-              </button>
+                <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                <span>{bakeryInfo.offers[0].action}</span>
+              </a>
             </div>
 
-            {/* Banner Image */}
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden border-2 border-white/40 shadow-md shrink-0">
+            {/* Bakery Shop Front Store Image */}
+            <div className="relative w-32 h-32 sm:w-44 sm:h-40 rounded-2xl overflow-hidden border-2 border-white/60 shadow-lg shrink-0 bg-white/10">
               <img
                 src={bakeryInfo.offers[0].image}
-                alt="Bakery Offer"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                alt="Gundanna Bakery Storefront Hassan"
+                className="w-full h-full object-cover transform hover:scale-108 transition-transform duration-500"
               />
             </div>
           </div>
