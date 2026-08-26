@@ -630,6 +630,19 @@
     "description": "Golden butter sponge cake studded with colorful candied fruits."
   },
   {
+    "id": 534,
+    "category": "Cakes",
+    "name": "Plum Cake (ಪ್ಲಮ್ ಕೇಕ್)",
+    "price": 100,
+    "rating": 4.85,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Rich Fruit",
+    "availability": true,
+    "image": "Plum Cake.png",
+    "description": "Traditional rich dark plum cake baked with soaked dry fruits, raisins, tutty fruitty, and warm aromatic spices."
+  },
+  {
     "id": 529,
     "category": "Cakes",
     "name": "Rava Cake (ರವಾ ಕೇಕ್)",

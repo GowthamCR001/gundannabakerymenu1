@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Camera, Maximize2, Sparkles, MessageCircle, Cake } from 'lucide-react';
+import { Camera, Maximize2, Sparkles, MessageCircle, Cake, Hash } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getGalleryImages } from '../utils/galleryResolver';
 import FullScreenImageViewer from './FullScreenImageViewer';
@@ -9,21 +9,28 @@ export default function GallerySection() {
   const [selectedViewImage, setSelectedViewImage] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Dynamically load gallery images from Gallery_images folder
+  // Dynamically load gallery images from Gallery_images folder (sorted in natural serial order)
   const allGalleryImages = useMemo(() => getGalleryImages(), []);
 
-  // Filter gallery images based on search
+  // Filter gallery images based on title or serial number
   const filteredGallery = useMemo(() => {
     if (!searchQuery.trim()) return allGalleryImages;
-    const query = searchQuery.toLowerCase();
-    return allGalleryImages.filter((img) => img.title.toLowerCase().includes(query));
+    const rawQuery = searchQuery.toLowerCase().trim();
+    const cleanNumQuery = rawQuery.replace(/^#/, '');
+
+    return allGalleryImages.filter((img) => {
+      const matchTitle = img.title.toLowerCase().includes(rawQuery);
+      const matchSerial = img.serialNumber.toString() === cleanNumQuery;
+      const matchSerialHash = `#${img.serialNumber}` === rawQuery;
+      return matchTitle || matchSerial || matchSerialHash;
+    });
   }, [allGalleryImages, searchQuery]);
 
   const handleWhatsAppInquiry = (e, cake) => {
     e.stopPropagation();
     const phone = bakeryInfo.whatsapp || '919483622026';
     const text = encodeURIComponent(
-      `Hello Gundanna Bakery! 🎂 I would like to inquire about ordering a custom birthday cake similar to: *${cake.title}* from your gallery.`
+      `Hello Gundanna Bakery! 🎂 I would like to inquire about ordering Custom Birthday Cake #${cake.serialNumber} (${cake.title}) from your gallery.`
     );
     window.open(`https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${text}`, '_blank');
   };
@@ -35,13 +42,14 @@ export default function GallerySection() {
         {/* Section Title & Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-2 border-b border-amber-200/60">
           <div className="space-y-1">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
                 <Cake className="w-3.5 h-3.5 text-amber-600" />
                 Custom Creations
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-bakery-price/10 text-bakery-price text-[11px] font-extrabold border border-bakery-price/20">
-                {allGalleryImages.length} Designs
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-800 text-[11px] font-extrabold border border-amber-400/30 flex items-center gap-1 shadow-2xs">
+                <Hash className="w-3 h-3 text-amber-600" />
+                {allGalleryImages.length} Designs (#1 – #{allGalleryImages.length})
               </span>
             </div>
             
@@ -51,7 +59,7 @@ export default function GallerySection() {
             </h2>
 
             <p className="text-xs sm:text-sm text-bakery-muted max-w-2xl leading-relaxed">
-              Explore our handcrafted artisan birthday cakes! Click any photo to view in full screen or order a custom cake for your celebration.
+              Explore our handcrafted birthday cake designs numbered in serial order (#1 to #{allGalleryImages.length}). Click any photo to enlarge or inquire on WhatsApp using the serial number!
             </p>
           </div>
 
@@ -62,8 +70,8 @@ export default function GallerySection() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search cake gallery..."
-                className="px-3 py-1.5 text-xs rounded-full border border-bakery-secondary/30 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/40 w-full sm:w-48 shadow-xs"
+                placeholder="Search by serial # or title..."
+                className="px-3 py-1.5 text-xs rounded-full border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/40 w-full sm:w-52 shadow-xs"
               />
             </div>
           )}
@@ -77,7 +85,7 @@ export default function GallerySection() {
                 key={cake.id}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: Math.min(idx * 0.05, 0.3) }}
+                transition={{ duration: 0.3, delay: Math.min(idx * 0.04, 0.25) }}
                 onClick={() => setSelectedViewImage(cake)}
                 className="group relative bg-white rounded-2xl overflow-hidden border border-amber-200/80 shadow-xs hover:shadow-lg hover:border-amber-400 transition-all duration-300 cursor-pointer flex flex-col"
               >
@@ -90,11 +98,19 @@ export default function GallerySection() {
                     loading="lazy"
                   />
 
-                  {/* Top Badge */}
+                  {/* Serial Number Badge (Top Left) */}
                   <div className="absolute top-2 left-2 z-10">
+                    <span className="flex items-center gap-1 text-[11px] font-extrabold text-amber-950 bg-amber-400/95 backdrop-blur-md px-2.5 py-0.5 rounded-full shadow-md border border-amber-300">
+                      <Hash className="w-3 h-3 text-amber-900" />
+                      <span>{cake.serialNumber}</span>
+                    </span>
+                  </div>
+
+                  {/* Custom Design Badge (Top Right) */}
+                  <div className="absolute top-2 right-2 z-10 hidden sm:block">
                     <span className="flex items-center gap-1 text-[10px] font-bold text-amber-900 bg-white/90 backdrop-blur-md px-2 py-0.5 rounded-full shadow-xs border border-amber-200/60">
-                      <Sparkles className="w-2.5 h-2.5 text-amber-500 fill-amber-400 animate-pulse" />
-                      Custom Design
+                      <Sparkles className="w-2.5 h-2.5 text-amber-500 fill-amber-400" />
+                      Design
                     </span>
                   </div>
 
@@ -109,10 +125,11 @@ export default function GallerySection() {
                 {/* Footer Details */}
                 <div className="p-3 flex flex-col justify-between flex-1 gap-2 bg-gradient-to-b from-white to-amber-50/30">
                   <div>
-                    <h3 className="font-heading font-bold text-xs sm:text-sm text-bakery-text group-hover:text-bakery-primary transition-colors line-clamp-1">
-                      {cake.title}
+                    <h3 className="font-heading font-bold text-xs sm:text-sm text-bakery-text group-hover:text-bakery-primary transition-colors line-clamp-1 flex items-center gap-1">
+                      <span className="text-amber-700 font-extrabold shrink-0">#{cake.serialNumber}</span>
+                      <span className="truncate">{cake.title.replace(/^Custom Birthday Cake #\d+/, 'Custom Birthday Cake')}</span>
                     </h3>
-                    <p className="text-[11px] text-bakery-muted truncate">
+                    <p className="text-[11px] text-bakery-muted truncate mt-0.5">
                       Handcrafted by Gundanna Bakery
                     </p>
                   </div>
@@ -121,10 +138,10 @@ export default function GallerySection() {
                   <button
                     onClick={(e) => handleWhatsAppInquiry(e, cake)}
                     className="w-full flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] py-1.5 px-2.5 rounded-xl shadow-xs active:scale-95 transition-all mt-1"
-                    title="Inquire about ordering this cake on WhatsApp"
+                    title={`Inquire about ordering Cake #${cake.serialNumber} on WhatsApp`}
                   >
                     <MessageCircle className="w-3.5 h-3.5 fill-white text-emerald-600" />
-                    <span>Inquire / Order</span>
+                    <span>Inquire Cake #{cake.serialNumber}</span>
                   </button>
                 </div>
               </motion.div>
