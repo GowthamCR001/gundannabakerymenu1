@@ -178,9 +178,24 @@ export default function ItemDetailModal({ item, onClose, quantity = 0, customiza
             {/* Cake Customization Box (For Cakes & Specials) */}
             {isCake() && (
               <div className="p-3.5 bg-amber-50/90 rounded-2xl border-2 border-amber-200 space-y-3">
-                <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 border-b border-amber-200 pb-1.5 uppercase tracking-wider">
-                  <Cake className="w-4 h-4 text-bakery-price" />
-                  <span>Customize Cake Order (Name, Date & Occasion)</span>
+                <div className="flex items-center justify-between border-b border-amber-200 pb-1.5">
+                  <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 uppercase tracking-wider">
+                    <Cake className="w-4 h-4 text-bakery-price" />
+                    <span>Customize Cake Order (Name, Date & Occasion)</span>
+                  </div>
+                </div>
+
+                {/* Cake Order Timing Note */}
+                <div className="p-2.5 bg-amber-100/90 rounded-xl border border-amber-300 text-amber-950 text-xs flex items-start gap-2">
+                  <Clock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                  <div className="text-[11px] leading-tight space-y-0.5">
+                    <p className="font-extrabold text-amber-900">
+                      ⏰ Cake orders accepted between 8:00 AM – 4:00 PM only.
+                    </p>
+                    <p className="text-[10px] text-amber-800 font-medium">
+                      Store Opening Hours: 9:00 AM – 9:00 PM (All 7 Days)
+                    </p>
+                  </div>
                 </div>
 
                 {/* 1. Occasion Selector */}

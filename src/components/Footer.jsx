@@ -65,23 +65,27 @@ export default function Footer({ onOpenQr }) {
             </div>
           </div>
 
-          {/* Working Hours */}
+          {/* Working Hours & Cake Order Notice */}
           <div className="space-y-3 text-xs">
             <h4 className="font-heading font-bold text-sm text-white uppercase tracking-wider">
               Bakery Timings
             </h4>
 
-            <div className="p-3 rounded-xl bg-amber-900/60 border border-amber-800/80 space-y-2">
+            <div className="p-3 rounded-xl bg-amber-900/60 border border-amber-800/80 space-y-2.5">
               <div className="flex items-center gap-2 text-amber-200">
                 <Clock className="w-4 h-4 text-amber-400" />
-                <span className="font-bold text-white">Daily Operating Hours</span>
+                <span className="font-bold text-white">Store Opening Hours</span>
               </div>
               <p className="text-amber-100 font-semibold text-sm">
-                {bakeryInfo.workingHours}
+                9:00 AM – 9:00 PM (All 7 Days)
               </p>
-              <p className="text-[11px] text-amber-300/80">
-                Fresh breads out of oven at 7:00 AM & 4:00 PM daily.
-              </p>
+              
+              <div className="pt-1 border-t border-amber-800/60 space-y-1">
+                <span className="font-bold text-amber-300 block text-[11px]">🎂 Cake & Custom Cake Orders:</span>
+                <p className="text-[11px] text-amber-100/90 font-medium">
+                  Accepted between <strong className="text-amber-300">8:00 AM to 4:00 PM</strong> daily.
+                </p>
+              </div>
             </div>
           </div>
         </div>

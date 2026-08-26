@@ -10,7 +10,7 @@ import MyListDrawer from '../components/MyListDrawer';
 import FloatingListBar from '../components/FloatingListBar';
 import Footer from '../components/Footer';
 import GallerySection from '../components/GallerySection';
-import { ArrowUp, Utensils, Leaf } from 'lucide-react';
+import { ArrowUp, Utensils, Leaf, Clock } from 'lucide-react';
 import rawMenuData from '../data/menu.json';
 import { resolveMenuImages } from '../utils/imageResolver';
 
@@ -361,6 +361,24 @@ export default function Home() {
                       {items.length} {items.length === 1 ? 'item' : 'items'}
                     </span>
                   </div>
+
+                  {/* Special Cake Ordering Timing Notice for Birthday Cakes */}
+                  {category === 'Birthday Cakes' && (
+                    <div className="p-3.5 bg-gradient-to-r from-amber-100/90 via-amber-50 to-orange-100/80 rounded-2xl border-2 border-amber-300/80 shadow-xs flex items-start gap-2.5 text-amber-950">
+                      <Clock className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+                      <div className="text-xs space-y-0.5">
+                        <p className="font-extrabold text-amber-900 leading-snug">
+                          ⏰ Cake Order Timing Notice: Cake orders are accepted between <span className="underline decoration-amber-500 font-black text-amber-950">8:00 AM and 4:00 PM</span> only.
+                        </p>
+                        <p className="text-[11px] font-semibold text-amber-800">
+                          • Store Opening Timings: <strong>9:00 AM – 9:00 PM</strong> daily.
+                        </p>
+                        <p className="text-[10px] text-amber-700 font-medium italic">
+                          (ಸೂಚನೆ: ಕೇಕ್ ಆರ್ಡರ್‌ಗಳನ್ನು ಬೆಳಿಗ್ಗೆ 8:00 ರಿಂದ ಸಂಜೆ 4:00 ರವರೆಗೆ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ. ಬೇಕರಿ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 9:00 ರಿಂದ ರಾತ್ರಿ 9:00.)
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Category Items Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

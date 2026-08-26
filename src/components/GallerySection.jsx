@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Camera, Maximize2, Sparkles, MessageCircle, Cake, Hash } from 'lucide-react';
+import { Camera, Maximize2, Sparkles, MessageCircle, Cake, Hash, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getGalleryImages } from '../utils/galleryResolver';
 import FullScreenImageViewer from './FullScreenImageViewer';
@@ -75,6 +75,22 @@ export default function GallerySection() {
               />
             </div>
           )}
+        </div>
+
+        {/* Cake Order Timing Notice for Custom Cakes */}
+        <div className="p-3.5 bg-gradient-to-r from-amber-100/95 via-amber-50 to-orange-100/90 rounded-2xl border-2 border-amber-300 shadow-xs flex items-start gap-2.5 text-amber-950">
+          <Clock className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+          <div className="text-xs space-y-0.5">
+            <p className="font-extrabold text-amber-900 leading-snug">
+              ⏰ Custom Cake Order Timing: Custom cake orders are accepted between <span className="underline decoration-amber-500 font-black text-amber-950">8:00 AM and 4:00 PM</span> only.
+            </p>
+            <p className="text-[11px] font-semibold text-amber-800">
+              • Store Opening Hours: <strong>9:00 AM – 9:00 PM</strong> daily.
+            </p>
+            <p className="text-[10px] text-amber-700 font-medium italic">
+              (ಸೂಚನೆ: ಕಸ್ಟಮ್ ಕೇಕ್ ಆರ್ಡರ್‌ಗಳನ್ನು ಬೆಳಿಗ್ಗೆ 8:00 ರಿಂದ ಸಂಜೆ 4:00 ರವರೆಗೆ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ. ಬೇಕರಿ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 9:00 ರಿಂದ ರಾತ್ರಿ 9:00.)
+            </p>
+          </div>
         </div>
 
         {/* Gallery Grid */}

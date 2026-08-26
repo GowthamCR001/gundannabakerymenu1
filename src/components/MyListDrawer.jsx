@@ -68,6 +68,7 @@ export default function MyListDrawer({ isOpen, onClose, myList, updateQuantity, 
     text += `━━━━━━━━━━━━━━━━━━━━━━\n`;
     text += `💰 *TOTAL ESTIMATED AMOUNT: ₹${totalPrice}*\n`;
     text += `🔒 *VERIFICATION CODE:* \`${orderChecksum}\`\n`;
+    text += `⏰ *TIMINGS:* Cake & Custom Cake orders accepted 8:00 AM – 4:00 PM (Store hours: 9:00 AM – 9:00 PM).\n`;
     text += `⚠️ *SECURITY NOTICE:* Official price breakdown is cross-checked at Bakery Cash Counter against Security Code \`${orderChecksum}\`.\n\n`;
     text += `📍 *Pickup Location:* ${bakeryInfo.shortName}, Hassan\n`;
     text += `📞 *Phone:* ${bakeryInfo.phone}`;
@@ -484,6 +485,16 @@ export default function MyListDrawer({ isOpen, onClose, myList, updateQuantity, 
                 <span className="font-mono bg-white px-2 py-0.5 rounded border border-amber-300 text-amber-900 text-[11px]">
                   {orderChecksum}
                 </span>
+              </div>
+
+              {/* Cake Order Timing Note in Drawer */}
+              <div className="p-2.5 bg-amber-100/90 rounded-xl border border-amber-300 text-amber-950 text-xs space-y-0.5">
+                <p className="font-extrabold text-amber-900 leading-tight">
+                  ⏰ Cake Order Hours: 8:00 AM – 4:00 PM (Store Open: 9:00 AM – 9:00 PM)
+                </p>
+                <p className="text-[10px] text-amber-800 font-medium">
+                  Applies to Birthday Cakes & Custom Gallery Cakes.
+                </p>
               </div>
 
               <div className="flex items-center justify-between px-1">
