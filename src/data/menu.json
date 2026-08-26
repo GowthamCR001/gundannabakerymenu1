@@ -292,6 +292,18 @@
     "description": "Layered butter pastry crust filled with spicy cottage cheese cubes, capsicum, and tikka spices."
   },
   {
+    "id": 404,
+    "category": "Puffs",
+    "name": "Capsicum Puff (ಕ್ಯಾಪ್ಸಿಕಂ ಪಫ್)",
+    "price": 20,
+    "rating": 4.85,
+    "isVeg": true,
+    "popular": true,
+    "availability": true,
+    "image": "Capsicum Puff.png",
+    "description": "Flaky golden multi-layered pastry filled with seasoned sautéed capsicum, onions, and bakery spices."
+  },
+  {
     "id": 405,
     "category": "Puffs",
     "name": "Veg Burger (ವೆಜ್ ಬರ್ಗರ್)",

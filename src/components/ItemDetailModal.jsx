@@ -190,7 +190,7 @@ export default function ItemDetailModal({ item, onClose, quantity = 0, customiza
                   <Clock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
                   <div className="text-[11px] leading-tight space-y-0.5">
                     <p className="font-extrabold text-amber-900">
-                      ⏰ Cake orders accepted between 8:00 AM – 4:00 PM only.
+                      ⏰ Cake orders accepted between 9:00 AM – 4:00 PM only.
                     </p>
                     <p className="text-[10px] text-amber-800 font-medium">
                       Store Opening Hours: 9:00 AM – 9:00 PM (All 7 Days)

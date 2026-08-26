@@ -83,7 +83,7 @@ export default function Footer({ onOpenQr }) {
               <div className="pt-1 border-t border-amber-800/60 space-y-1">
                 <span className="font-bold text-amber-300 block text-[11px]">🎂 Cake & Custom Cake Orders:</span>
                 <p className="text-[11px] text-amber-100/90 font-medium">
-                  Accepted between <strong className="text-amber-300">8:00 AM to 4:00 PM</strong> daily.
+                  Accepted between <strong className="text-amber-300">9:00 AM to 4:00 PM</strong> daily.
                 </p>
               </div>
             </div>

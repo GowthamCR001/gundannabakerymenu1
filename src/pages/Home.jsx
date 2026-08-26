@@ -368,13 +368,13 @@ export default function Home() {
                       <Clock className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
                       <div className="text-xs space-y-0.5">
                         <p className="font-extrabold text-amber-900 leading-snug">
-                          ⏰ Cake Order Timing Notice: Cake orders are accepted between <span className="underline decoration-amber-500 font-black text-amber-950">8:00 AM and 4:00 PM</span> only.
+                          ⏰ Cake Order Timing Notice: Cake orders are accepted between <span className="underline decoration-amber-500 font-black text-amber-950">9:00 AM and 4:00 PM</span> only.
                         </p>
                         <p className="text-[11px] font-semibold text-amber-800">
                           • Store Opening Timings: <strong>9:00 AM – 9:00 PM</strong> daily.
                         </p>
                         <p className="text-[10px] text-amber-700 font-medium italic">
-                          (ಸೂಚನೆ: ಕೇಕ್ ಆರ್ಡರ್‌ಗಳನ್ನು ಬೆಳಿಗ್ಗೆ 8:00 ರಿಂದ ಸಂಜೆ 4:00 ರವರೆಗೆ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ. ಬೇಕರಿ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 9:00 ರಿಂದ ರಾತ್ರಿ 9:00.)
+                          (ಸೂಚನೆ: ಕೇಕ್ ಆರ್ಡರ್‌ಗಳನ್ನು ಬೆಳಿಗ್ಗೆ 9:00 ರಿಂದ ಸಂಜೆ 4:00 ರವರೆಗೆ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ. ಬೇಕರಿ ಸಮಯ: ಬೆಳಿಗ್ಗೆ 9:00 ರಿಂದ ರಾತ್ರಿ 9:00.)
                         </p>
                       </div>
                     </div>
