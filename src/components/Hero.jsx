@@ -19,7 +19,16 @@ export default function Hero({ searchQuery, setSearchQuery, selectedCategory, se
           className="relative inline-block"
         >
           <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full bg-white p-1.5 shadow-xl border-4 border-bakery-secondary overflow-hidden flex items-center justify-center">
-            <img src={bakeryInfo.logo} alt={bakeryInfo.name} className="w-full h-full object-contain p-1" />
+            <img
+              src={bakeryInfo.logo}
+              alt={bakeryInfo.name}
+              width="112"
+              height="112"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              className="w-full h-full object-contain p-1"
+            />
           </div>
           <span className="absolute -bottom-1 right-0 bg-bakery-price text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow flex items-center gap-1">
             <Star className="w-3 h-3 fill-amber-300 text-amber-300" /> {bakeryInfo.rating}
@@ -36,8 +45,13 @@ export default function Hero({ searchQuery, setSearchQuery, selectedCategory, se
           {/* Chef Mascot 3D Kannada Banner */}
           <div className="max-w-md mx-auto relative rounded-2xl bg-gradient-to-r from-amber-100/90 via-orange-50 to-amber-100/90 p-2 sm:p-3 shadow-md border border-amber-300/60 overflow-hidden group">
             <img
-              src="/images/bakery-banner-kannada.png"
+              src="/images/bakery-banner-kannada.webp"
               alt="ಗುಂಡಣ್ಣ ಬೇಕರಿ Chef Mascot"
+              width="448"
+              height="144"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
               className="w-full h-auto max-h-28 sm:max-h-36 object-contain filter drop-shadow-md group-hover:scale-102 transition-transform duration-300 mx-auto"
             />
           </div>
@@ -138,6 +152,11 @@ export default function Hero({ searchQuery, setSearchQuery, selectedCategory, se
               <img
                 src={bakeryInfo.offers[0].image}
                 alt="Gundanna Bakery Storefront Hassan"
+                width="176"
+                height="160"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
                 className="w-full h-full object-cover transform hover:scale-108 transition-transform duration-500"
               />
             </div>

@@ -96,6 +96,10 @@ export default function ItemDetailModal({ item, onClose, quantity = 0, customiza
             <img
               src={item.image}
               alt={item.name}
+              width="512"
+              height="256"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 e.target.src = 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=80';

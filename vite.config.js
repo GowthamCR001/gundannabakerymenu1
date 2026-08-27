@@ -6,5 +6,13 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true
+  },
+  build: {
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      }
+    }
   }
 })

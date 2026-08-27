@@ -57,7 +57,15 @@ export default function QrModal({ isOpen, onClose }) {
           {/* Bakery Logo Header */}
           <div className="space-y-1">
             <div className="w-12 h-12 rounded-full bg-white border-2 border-bakery-secondary overflow-hidden flex items-center justify-center mx-auto mb-1 shadow-sm">
-              <img src={bakeryInfo.logo} alt={bakeryInfo.name} className="w-full h-full object-contain p-0.5" />
+              <img
+                src={bakeryInfo.logo}
+                alt={bakeryInfo.name}
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-contain p-0.5"
+              />
             </div>
             <h3 className="text-lg font-bold font-heading text-bakery-primary">
               {bakeryInfo.name}
@@ -183,6 +191,10 @@ export default function QrModal({ isOpen, onClose }) {
                   <img
                     src={instaQr}
                     alt="GB__GUNDANNA.BAKERY Instagram QR Code"
+                    width="224"
+                    height="224"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Click to Redirect Hover Prompt */}

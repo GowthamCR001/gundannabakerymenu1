@@ -110,8 +110,11 @@ export default function GallerySection() {
                   <img
                     src={cake.url}
                     alt={cake.title}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                    width="300"
+                    height="300"
                     loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                   />
 
                   {/* Serial Number Badge (Top Left) */}

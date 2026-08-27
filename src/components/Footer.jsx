@@ -12,7 +12,15 @@ export default function Footer({ onOpenQr }) {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <div className="w-9 h-9 rounded-full bg-white text-bakery-primary flex items-center justify-center overflow-hidden border border-bakery-secondary shrink-0">
-                <img src={bakeryInfo.logo} alt={bakeryInfo.name} className="w-full h-full object-contain p-0.5" />
+                <img
+                  src={bakeryInfo.logo}
+                  alt={bakeryInfo.name}
+                  width="36"
+                  height="36"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-contain p-0.5"
+                />
               </div>
               <h3 className="text-xl font-extrabold font-heading text-white">
                 {bakeryInfo.name}

@@ -53,7 +53,15 @@ export default function Navbar({ onOpenQr, listCount = 0, onOpenList }) {
         {/* Left: Bakery Brand */}
         <div className="flex items-center gap-2.5">
           <div className="w-10 h-10 rounded-full bg-white text-bakery-primary flex items-center justify-center font-heading font-bold text-lg shadow-md border-2 border-bakery-secondary overflow-hidden shrink-0">
-            <img src={bakeryInfo.logo} alt={bakeryInfo.name} className="w-full h-full object-contain p-0.5" />
+            <img
+              src={bakeryInfo.logo}
+              alt={bakeryInfo.name}
+              width="40"
+              height="40"
+              loading="eager"
+              decoding="async"
+              className="w-full h-full object-contain p-0.5"
+            />
           </div>
           <div>
             <h1 className="font-heading font-bold text-lg sm:text-xl text-bakery-primary leading-tight tracking-wide flex items-center gap-1.5">
