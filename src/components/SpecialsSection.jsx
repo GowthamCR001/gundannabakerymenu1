@@ -28,7 +28,7 @@ export default function SpecialsSection({ items, onItemClick, myListMap = {}, on
       {/* Specials Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((item, index) => {
-          const qty = myListMap[item.id] || 0;
+          const qty = myListMap[item.id] || (item.name ? myListMap[item.name] : 0) || 0;
 
           const handleAdd = (e) => {
             e.stopPropagation();

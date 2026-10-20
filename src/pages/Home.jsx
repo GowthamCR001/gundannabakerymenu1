@@ -84,12 +84,25 @@ export default function Home() {
       const targetId = typeof targetItemOrId === 'object' && targetItemOrId !== null 
         ? targetItemOrId.id 
         : targetItemOrId;
+      const targetName = typeof targetItemOrId === 'object' && targetItemOrId !== null
+        ? targetItemOrId.name
+        : null;
       
-      const existsIndex = prev.findIndex((entry) => entry.item && entry.item.id === targetId);
+      const existsIndex = prev.findIndex((entry) => {
+        if (!entry.item) return false;
+        if (entry.item.id === targetId) return true;
+        if (targetName && entry.item.name === targetName) return true;
+        return false;
+      });
       
       if (newQuantity <= 0) {
         // Remove item if quantity <= 0
-        return prev.filter((entry) => entry.item && entry.item.id !== targetId);
+        return prev.filter((entry) => {
+          if (!entry.item) return false;
+          if (entry.item.id === targetId) return false;
+          if (targetName && entry.item.name === targetName) return false;
+          return true;
+        });
       }
 
       if (existsIndex >= 0) {
@@ -133,11 +146,14 @@ export default function Home() {
     });
   };
 
-  // Map of itemId -> quantity for fast UI lookup
+  // Map of itemId -> quantity for fast UI lookup (also maps by item name for cross-category sync)
   const myListMap = useMemo(() => {
     const map = {};
     myList.forEach((entry) => {
       map[entry.item.id] = entry.quantity;
+      if (entry.item.name) {
+        map[entry.item.name] = entry.quantity;
+      }
     });
     return map;
   }, [myList]);
@@ -165,10 +181,14 @@ export default function Home() {
     });
   }, [searchQuery, vegOnly]);
 
-  // Extract specials items
+  // Extract specials items (displays all active bakery specials in order)
   const specialsItems = useMemo(() => {
-    return menuData.filter(item => item.category === 'Specials' || item.popular === true).slice(0, 5);
-  }, []);
+    const specials = menuData.filter(item => {
+      if (vegOnly && item.isVeg === false) return false;
+      return item.category === 'Specials';
+    });
+    return specials.length > 0 ? specials : menuData.filter(item => (!vegOnly || item.isVeg) && item.popular === true);
+  }, [vegOnly]);
 
   // Group items by category
   const groupedCategories = useMemo(() => {
@@ -314,7 +334,7 @@ export default function Home() {
                       key={item.id}
                       item={item}
                       index={idx}
-                      quantity={myListMap[item.id] || 0}
+                      quantity={myListMap[item.id] || (item.name ? myListMap[item.name] : 0) || 0}
                       onUpdateQuantity={handleUpdateQuantity}
                       onItemClick={(item) => setSelectedItem(item)}
                     />
@@ -387,7 +407,7 @@ export default function Home() {
                         key={item.id}
                         item={item}
                         index={idx}
-                        quantity={myListMap[item.id] || 0}
+                        quantity={myListMap[item.id] || (item.name ? myListMap[item.name] : 0) || 0}
                         onUpdateQuantity={handleUpdateQuantity}
                         onItemClick={(item) => setSelectedItem(item)}
                       />

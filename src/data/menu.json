@@ -1,5 +1,44 @@
 [
   {
+    "id": 108,
+    "category": "Specials",
+    "name": "Tiramisu (ತಿರಮಿಸು)",
+    "price": 70,
+    "rating": 4.9,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Italian Classic",
+    "availability": true,
+    "image": "Tiramisu.webp",
+    "description": "Classic Italian layered dessert with rich mascarpone cheese cream, espresso-infused sponge, and fine Belgian cocoa dusting."
+  },
+  {
+    "id": 109,
+    "category": "Specials",
+    "name": "Biscoff Laban (ಬಿಸ್ಕಾಫ್ ಲಬಾನ್)",
+    "price": 70,
+    "rating": 4.95,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Trending Dessert",
+    "availability": true,
+    "image": "Biscoff Laban.webp",
+    "description": "Chilled creamy dessert cup layered with rich milk cream, caramelized Lotus Biscoff flavor, and garnished with roasted pistachios and almond flakes."
+  },
+  {
+    "id": 110,
+    "category": "Specials",
+    "name": "Banana Pudding (ಬನಾನಾ ಪುಡ್ಡಿಂಗ್)",
+    "price": 70,
+    "rating": 4.85,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Sweet Delight",
+    "availability": true,
+    "image": "Banana Pudding.webp",
+    "description": "Luscious creamy vanilla custard pudding with fresh banana flavor, buttery biscuit crumble, sliced almonds, coconut shreds, and a candied cherry."
+  },
+  {
     "id": 101,
     "category": "Specials",
     "name": "Chocolate Bun (ಚಾಕೊಲೇಟ್ ಬನ್)",
@@ -63,32 +102,6 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
     "description": "Golden multi-layered flaky pastry crust stuffed with spicy mashed potato, green peas, and Indian bakery spices."
-  },
-  {
-    "id": 106,
-    "category": "Specials",
-    "name": "Rasmalai Tres Leches Cake (ರಸಮಲೈ ಟ್ರೆಸ್ ಲೇಚೆಸ್ ಕೇಕ್)",
-    "price": 80,
-    "rating": 4.95,
-    "isVeg": true,
-    "popular": true,
-    "badge": "⭐ Royal Dessert",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&auto=format&fit=crop&q=80",
-    "description": "Fusion milk-soaked tres leches cake slice infused with saffron, cardamom milk cream and pistachio."
-  },
-  {
-    "id": 107,
-    "category": "Specials",
-    "name": "Biscoff Cheesecake (ಬಿಸ್ಕಾಫ್ ಚೀಸ್‌ಕೇಕ್)",
-    "price": 70,
-    "rating": 4.9,
-    "isVeg": true,
-    "popular": true,
-    "badge": "⭐ Must Try",
-    "availability": true,
-    "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600&auto=format&fit=crop&q=80",
-    "description": "Rich creamy cheesecake topped with caramelized Lotus Biscoff cookie spread and crushed cookies."
   },
   {
     "id": 205,
@@ -340,6 +353,45 @@
     "availability": true,
     "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80",
     "description": "Golden roll filled with crispy baby corn pieces and rich melted cheese."
+  },
+  {
+    "id": 537,
+    "category": "Cakes",
+    "name": "Tiramisu (ತಿರಮಿಸು)",
+    "price": 70,
+    "rating": 4.9,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Italian Classic",
+    "availability": true,
+    "image": "Tiramisu.webp",
+    "description": "Classic Italian layered dessert with rich mascarpone cheese cream, espresso-infused sponge, and fine Belgian cocoa dusting."
+  },
+  {
+    "id": 538,
+    "category": "Cakes",
+    "name": "Biscoff Laban (ಬಿಸ್ಕಾಫ್ ಲಬಾನ್)",
+    "price": 70,
+    "rating": 4.95,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Trending Dessert",
+    "availability": true,
+    "image": "Biscoff Laban.webp",
+    "description": "Chilled creamy dessert cup layered with rich milk cream, caramelized Lotus Biscoff flavor, and garnished with roasted pistachios and almond flakes."
+  },
+  {
+    "id": 539,
+    "category": "Cakes",
+    "name": "Banana Pudding (ಬನಾನಾ ಪುಡ್ಡಿಂಗ್)",
+    "price": 70,
+    "rating": 4.85,
+    "isVeg": true,
+    "popular": true,
+    "badge": "⭐ Sweet Delight",
+    "availability": true,
+    "image": "Banana Pudding.webp",
+    "description": "Luscious creamy vanilla custard pudding with fresh banana flavor, buttery biscuit crumble, sliced almonds, coconut shreds, and a candied cherry."
   },
   {
     "id": 501,
